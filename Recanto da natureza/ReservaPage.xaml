@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Recanto_da_natureza.ReservaPage"
+    BackgroundColor="#E8DCCB"
+    Title="Reservas">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="30">
+
+            <Label
+                Text="Nossos Chalés"
+                FontSize="38"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#4D6B50"/>
+
+            <!-- SKY -->
+            <Border
+                BackgroundColor="White"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 30"
+                Padding="0">
+
+                <VerticalStackLayout Spacing="0">
+
+                    <!-- IMAGEM -->
+                    <Grid HeightRequest="420">
+
+                        <Image
+                            Source="pousada.jpg"
+                            Aspect="AspectFill"/>
+
+                        <!-- ESCURECER -->
+                        <BoxView BackgroundColor="#35000000"/>
+
+                        <!-- TEXTO EM CIMA -->
+                        <VerticalStackLayout
+                            Padding="20"
+                            VerticalOptions="End">
+
+                            <Label
+                                Text="Chalé Sky"
+                                FontSize="34"
+                                FontAttributes="Bold"
+                                TextColor="White"/>
+
+                            <Label
+                                Text="Vista panorâmica e ambiente moderno"
+                                FontSize="18"
+                                TextColor="White"/>
+
+                        </VerticalStackLayout>
+
+                    </Grid>
+
+                    <!-- CONTEÚDO -->
+                    <VerticalStackLayout
+                        Padding="20"
+                        Spacing="12">
+
+                        <Label
+                            Text="✨ Wi-Fi incluso"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="❄️ Ar-condicionado"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="🛏️ Cama Queen Size"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="👫 Capacidade: 2 hóspedes"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="R$ 450,00 / noite"
+                            FontSize="28"
+                            FontAttributes="Bold"
+                            TextColor="Green"/>
+
+                        <Button
+                            Text="Reservar Sky"
+                            HeightRequest="60"
+                            FontSize="20"/>
+
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- WOOD -->
+            <Border
+                BackgroundColor="White"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 30"
+                Padding="0">
+
+                <VerticalStackLayout Spacing="0">
+
+                    <Grid HeightRequest="420">
+
+                        <Image
+                            Source="wood.jpg"
+                            Aspect="AspectFill"/>
+
+                        <BoxView BackgroundColor="#35000000"/>
+
+                        <VerticalStackLayout
+                            Padding="20"
+                            VerticalOptions="End">
+
+                            <Label
+                                Text="Chalé Wood"
+                                FontSize="34"
+                                FontAttributes="Bold"
+                                TextColor="White"/>
+
+                            <Label
+                                Text="Estilo rústico aconchegante"
+                                FontSize="18"
+                                TextColor="White"/>
+
+                        </VerticalStackLayout>
+
+                    </Grid>
+
+                    <VerticalStackLayout
+                        Padding="20"
+                        Spacing="12">
+
+                        <Label
+                            Text="✨ Wi-Fi incluso"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="🛁 Banheira"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="🌲 Varanda privativa"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="👫 Capacidade: 2 hóspedes"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="R$ 390,00 / noite"
+                            FontSize="28"
+                            FontAttributes="Bold"
+                            TextColor="Green"/>
+
+                        <Button
+                            Text="Reservar Wood"
+                            HeightRequest="60"
+                            FontSize="20"/>
+
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- STONE -->
+            <Border
+                BackgroundColor="White"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 30"
+                Padding="0">
+
+                <VerticalStackLayout Spacing="0">
+
+                    <Grid HeightRequest="420">
+
+                        <Image
+                            Source="sky.jpg"
+                            Aspect="AspectFill"/>
+
+                        <BoxView BackgroundColor="#35000000"/>
+
+                        <VerticalStackLayout
+                            Padding="20"
+                            VerticalOptions="End">
+
+                            <Label
+                                Text="Chalé Stone"
+                                FontSize="34"
+                                FontAttributes="Bold"
+                                TextColor="White"/>
+
+                            <Label
+                                Text="Design sofisticado natural"
+                                FontSize="18"
+                                TextColor="White"/>
+
+                        </VerticalStackLayout>
+
+                    </Grid>
+
+                    <VerticalStackLayout
+                        Padding="20"
+                        Spacing="12">
+
+                        <Label
+                            Text="✨ Wi-Fi incluso"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="🛁 Hidromassagem"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="🌿 Vista para natureza"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="👫 Capacidade: 2 hóspedes"
+                            FontSize="18"/>
+
+                        <Label
+                            Text="R$ 520,00 / noite"
+                            FontSize="28"
+                            FontAttributes="Bold"
+                            TextColor="Green"/>
+
+                        <Button
+                            Text="Reservar Stone"
+                            HeightRequest="60"
+                            FontSize="20"/>
+
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
+    

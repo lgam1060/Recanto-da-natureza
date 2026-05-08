@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Recanto_da_natureza.LoginPage"
+    BackgroundColor="#E8DCCB"
+    Title="Login">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="15">
+
+            <Label
+                Text="Área do Hóspede"
+                FontSize="34"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#4D6B50"/>
+
+            <Border
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 25"
+                Padding="20">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label
+                        Text="Login"
+                        FontSize="24"
+                        FontAttributes="Bold"/>
+
+                    <Entry Placeholder="E-mail"/>
+
+                    <Entry
+                        Placeholder="Senha"
+                        IsPassword="True"/>
+
+                    <Button Text="Entrar"/>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <Border
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 25"
+                Padding="20">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label
+                        Text="Cadastro"
+                        FontSize="24"
+                        FontAttributes="Bold"/>
+
+                    <Entry Placeholder="Nome completo"/>
+
+                    <Entry Placeholder="E-mail"/>
+
+                    <Entry Placeholder="Telefone"/>
+
+                    <Entry
+                        Placeholder="Senha"
+                        IsPassword="True"/>
+
+                    <Button Text="Cadastrar"/>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

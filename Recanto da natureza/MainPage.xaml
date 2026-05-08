@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Recanto_da_natureza.MainPage"
+    BackgroundColor="#E8DCCB"
+    Title="Recanto da Natureza">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="0"
+            Spacing="0">
+
+            <!-- IMAGEM PRINCIPAL -->
+            <Grid HeightRequest="320">
+
+                <Image
+                    Source="panorama.jpg"
+                    Aspect="AspectFill"/>
+
+                <!-- ESCURECER LEVEMENTE -->
+                <BoxView
+                    BackgroundColor="#55000000"/>
+
+                <!-- TEXTO SOBRE A IMAGEM -->
+                <VerticalStackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Spacing="8">
+
+                    <Label
+                        Text="Recanto da Natureza"
+                        FontSize="40"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        TextColor="White"/>
+
+                    <Label
+                        Text="Pousada exclusiva em Brotas/SP"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        TextColor="White"/>
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+            <!-- CONTEÚDO -->
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="20">
+
+                <!-- CARD PRINCIPAL -->
+                <Border
+                    BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 30"
+                    Padding="25">
+
+                    <VerticalStackLayout Spacing="22">
+
+                        <Label
+                            Text="Informações da Pousada"
+                            FontSize="28"
+                            FontAttributes="Bold"
+                            TextColor="#4D6B50"
+                            HorizontalOptions="Center"/>
+
+                        <!-- ITEM -->
+                        <HorizontalStackLayout Spacing="15">
+
+                            <Label
+                                Text="🌿"
+                                FontSize="28"
+                                VerticalOptions="Center"/>
+
+                            <VerticalStackLayout>
+
+                                <Label
+                                    Text="8 Chalés Exclusivos"
+                                    FontSize="20"
+                                    FontAttributes="Bold"
+                                    TextColor="#4D6B50"/>
+
+                                <Label
+                                    Text="Ambientes privativos em meio à natureza."
+                                    FontSize="15"
+                                    TextColor="Gray"/>
+
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+
+                        <!-- ITEM -->
+                        <HorizontalStackLayout Spacing="15">
+
+                            <Label
+                                Text="👫"
+                                FontSize="28"
+                                VerticalOptions="Center"/>
+
+                            <VerticalStackLayout>
+
+                                <Label
+                                    Text="Máximo de 2 hóspedes"
+                                    FontSize="20"
+                                    FontAttributes="Bold"
+                                    TextColor="#4D6B50"/>
+
+                                <Label
+                                    Text="Ideal para casais e momentos tranquilos."
+                                    FontSize="15"
+                                    TextColor="Gray"/>
+
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+
+                        <!-- ITEM -->
+                        <HorizontalStackLayout Spacing="15">
+
+                            <Label
+                                Text="🔞"
+                                FontSize="28"
+                                VerticalOptions="Center"/>
+
+                            <VerticalStackLayout>
+
+                                <Label
+                                    Text="Ambiente adulto"
+                                    FontSize="20"
+                                    FontAttributes="Bold"
+                                    TextColor="#4D6B50"/>
+
+                                <Label
+                                    Text="Permitido apenas maiores de 14 anos."
+                                    FontSize="15"
+                                    TextColor="Gray"/>
+
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+
+                        <!-- ITEM -->
+                        <HorizontalStackLayout Spacing="15">
+
+                            <Label
+                                Text="🚫"
+                                FontSize="28"
+                                VerticalOptions="Center"/>
+
+                            <VerticalStackLayout>
+
+                                <Label
+                                    Text="Pets não permitidos"
+                                    FontSize="20"
+                                    FontAttributes="Bold"
+                                    TextColor="#4D6B50"/>
+
+                                <Label
+                                    Text="Mantemos um ambiente silencioso e reservado."
+                                    FontSize="15"
+                                    TextColor="Gray"/>
+
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <!-- BOTÕES -->
+                <Button
+                    Text="Login e Cadastro"
+                    HeightRequest="60"
+                    FontSize="20"
+                    Clicked="AbrirLogin"/>
+
+                <Button
+                    Text="Reservas"
+                    HeightRequest="60"
+                    FontSize="20"
+                    Clicked="AbrirReserva"/>
+
+                <Button
+                    Text="Sobre Nós"
+                    HeightRequest="60"
+                    FontSize="20"
+                    Clicked="AbrirSobre"/>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
