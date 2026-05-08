@@ -13,75 +13,108 @@
             Padding="20"
             Spacing="20">
 
-            <Image
-                Source="natureza.jpg"
-                HeightRequest="260"
-                Aspect="AspectFill"/>
+            <!-- Imagem principal -->
+            <Frame
+                CornerRadius="25"
+                Padding="0"
+                HasShadow="True"
+                IsClippedToBounds="True"
+                BackgroundColor="Transparent">
 
+                <Image
+                    Source="natureza.jpg"
+                    HeightRequest="260"
+                    Aspect="AspectFill"/>
+            </Frame>
+
+            <!-- Título -->
             <Label
                 Text="Sobre Nós"
                 FontSize="34"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
-                TextColor="#4D6B50"/>
+                TextColor="#355E3B"/>
 
-            <Border
+            <!-- Sobre -->
+            <Frame
                 BackgroundColor="White"
-                StrokeShape="RoundRectangle 25"
-                Padding="20">
+                CornerRadius="25"
+                Padding="22"
+                HasShadow="True">
 
-                <VerticalStackLayout Spacing="15">
+                <VerticalStackLayout Spacing="18">
 
                     <Label
                         Text="O Recanto da Natureza é uma pousada localizada em Brotas/SP voltada para descanso, conforto e tranquilidade."
-                        FontSize="18"/>
+                        FontSize="19"
+                        TextColor="#2F2F2F"
+                        LineBreakMode="WordWrap"/>
 
                     <Label
                         Text="Contamos com 8 chalés exclusivos para até 2 hóspedes."
-                        FontSize="18"/>
+                        FontSize="19"
+                        TextColor="#2F2F2F"
+                        LineBreakMode="WordWrap"/>
 
                     <Label
                         Text="Nosso ambiente é reservado apenas para adultos e jovens acima de 14 anos."
-                        FontSize="18"/>
+                        FontSize="19"
+                        TextColor="#2F2F2F"
+                        LineBreakMode="WordWrap"/>
 
                     <Label
                         Text="Para manter a tranquilidade da pousada, não permitimos pets."
-                        FontSize="18"/>
+                        FontSize="19"
+                        TextColor="#2F2F2F"
+                        LineBreakMode="WordWrap"/>
 
                 </VerticalStackLayout>
 
-            </Border>
+            </Frame>
 
-            <Border
+            <!-- Chalés -->
+            <Frame
                 BackgroundColor="White"
-                StrokeShape="RoundRectangle 25"
-                Padding="20">
+                CornerRadius="25"
+                Padding="22"
+                HasShadow="True">
 
-                <VerticalStackLayout Spacing="15">
+                <VerticalStackLayout Spacing="18">
 
                     <Label
                         Text="Chalés Disponíveis"
-                        FontSize="26"
+                        FontSize="28"
                         FontAttributes="Bold"
-                        TextColor="#4D6B50"/>
+                        TextColor="#355E3B"/>
 
                     <Label
-                        Text="Chalé Sky — Vista panorâmica moderna"
-                        FontSize="18"/>
+                        Text="• Chalé Sky — Vista panorâmica moderna"
+                        FontSize="19"
+                        TextColor="#2F2F2F"/>
 
                     <Label
-                        Text="Chalé Wood — Estilo rústico aconchegante"
-                        FontSize="18"/>
+                        Text="• Chalé Wood — Estilo rústico aconchegante"
+                        FontSize="19"
+                        TextColor="#2F2F2F"/>
 
                     <Label
-                        Text="Chalé Stone — Design sofisticado natural"
-                        FontSize="18"/>
+                        Text="• Chalé Stone — Design sofisticado natural"
+                        FontSize="19"
+                        TextColor="#2F2F2F"/>
 
                 </VerticalStackLayout>
 
-            </Border>
+            </Frame>
 
-            <Button Text="Contato via WhatsApp"/>
+            <!-- Botão -->
+            <Button
+                Text="Contato via WhatsApp"
+                FontSize="20"
+                FontAttributes="Bold"
+                HeightRequest="60"
+                CornerRadius="18"
+                BackgroundColor="#4D6B50"
+                TextColor="White"/>
 
         </VerticalStackLayout>
 
