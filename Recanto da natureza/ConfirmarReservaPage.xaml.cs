@@ -25,10 +25,13 @@ namespace Recanto_da_natureza
             CheckInDate.Date = DateTime.Today;
             CheckOutDate.Date = DateTime.Today.AddDays(1);
 
-            // Inicializar estado do switch de tema
+            // Inicializar estado do switch de tema (considera UserAppTheme e RequestedTheme)
             try
             {
-                ThemeSwitch.IsToggled = Application.Current?.UserAppTheme == AppTheme.Dark;
+                var userTheme = Application.Current?.UserAppTheme;
+                var requested = Application.Current?.RequestedTheme;
+                var isDark = (userTheme == AppTheme.Dark) || (userTheme == AppTheme.Unspecified && requested == AppTheme.Dark);
+                ThemeSwitch.IsToggled = isDark;
             }
             catch
             {

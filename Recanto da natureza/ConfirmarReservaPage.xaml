@@ -11,38 +11,38 @@
 
             <controls:NavBarView />
 
-            <Label x:Name="ChaleTitle" FontSize="28" FontAttributes="Bold" TextColor="#4D6B50" HorizontalOptions="Center" />
+            <Label x:Name="ChaleTitle" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource SecondaryTextColor}" />
 
             <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                <Label Text="Tema escuro" VerticalOptions="Center" />
+                <Label Text="Tema escuro" VerticalOptions="Center" TextColor="{DynamicResource PrimaryTextColor}" />
                 <Switch x:Name="ThemeSwitch" Toggled="OnThemeToggled" />
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Spacing="10">
-                <Label Text="Check-in:" VerticalOptions="Center" />
+                <Label Text="Check-in:" VerticalOptions="Center" TextColor="{DynamicResource PrimaryTextColor}" />
                 <DatePicker x:Name="CheckInDate" />
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Spacing="10">
-                <Label Text="Check-out:" VerticalOptions="Center" />
+                <Label Text="Check-out:" VerticalOptions="Center" TextColor="{DynamicResource PrimaryTextColor}" />
                 <DatePicker x:Name="CheckOutDate" />
             </HorizontalStackLayout>
 
-            <Label x:Name="NightsLabel" Text="Quantidade de diárias: 0" FontSize="18" />
+            <Label x:Name="NightsLabel" Text="Quantidade de diárias: 0" FontSize="18" TextColor="{DynamicResource PrimaryTextColor}" />
 
-                       <Label x:Name="PricePerNightLabel" Text="Valor por noite: R$ 0,00" FontSize="18" />
+                       <Label x:Name="PricePerNightLabel" Text="Valor por noite: R$ 0,00" FontSize="18" TextColor="{DynamicResource PrimaryTextColor}" />
 
-            <Label x:Name="TotalLabel" Text="Valor total: R$ 0,00" FontSize="20" FontAttributes="Bold" TextColor="Green" />
+            <Label x:Name="TotalLabel" Text="Valor total: R$ 0,00" FontSize="20" FontAttributes="Bold" TextColor="{DynamicResource TotalTextColor}" />
 
             <HorizontalStackLayout Spacing="10">
                 <Entry x:Name="CouponEntry" Placeholder="Código do cupom" HorizontalOptions="FillAndExpand" />
                 <Button Text="Aplicar" Clicked="OnAplicarCupomClicked" />
             </HorizontalStackLayout>
 
-            <Label x:Name="DiscountLabel" Text="Desconto: R$ 0,00 (0%)" FontSize="16" />
+            <Label x:Name="DiscountLabel" Text="Desconto: R$ 0,00 (0%)" FontSize="16" TextColor="{DynamicResource PrimaryTextColor}" />
 
-            <Label Text="Forma de pagamento:" />
-            <Picker x:Name="PaymentPicker">
+            <Label Text="Forma de pagamento:" TextColor="{DynamicResource PrimaryTextColor}" />
+            <Picker x:Name="PaymentPicker" TextColor="{DynamicResource PrimaryTextColor}" BackgroundColor="{DynamicResource ControlBackground}">
                 <Picker.Items>
                     <x:String>Cartão</x:String>
                     <x:String>Pix</x:String>
