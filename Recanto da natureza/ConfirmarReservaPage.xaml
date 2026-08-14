@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Recanto_da_natureza.Controls"
+             x:Class="Recanto_da_natureza.ConfirmarReservaPage"
+             BackgroundColor="#E8DCCB"
+             Title="Confirmar Reserva">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <controls:NavBarView />
+
+            <Label x:Name="ChaleTitle" FontSize="28" FontAttributes="Bold" TextColor="#4D6B50" HorizontalOptions="Center" />
+
+            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                <Label Text="Tema escuro" VerticalOptions="Center" />
+                <Switch x:Name="ThemeSwitch" Toggled="OnThemeToggled" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Check-in:" VerticalOptions="Center" />
+                <DatePicker x:Name="CheckInDate" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Check-out:" VerticalOptions="Center" />
+                <DatePicker x:Name="CheckOutDate" />
+            </HorizontalStackLayout>
+
+            <Label x:Name="NightsLabel" Text="Quantidade de diárias: 0" FontSize="18" />
+
+                       <Label x:Name="PricePerNightLabel" Text="Valor por noite: R$ 0,00" FontSize="18" />
+
+            <Label x:Name="TotalLabel" Text="Valor total: R$ 0,00" FontSize="20" FontAttributes="Bold" TextColor="Green" />
+
+            <HorizontalStackLayout Spacing="10">
+                <Entry x:Name="CouponEntry" Placeholder="Código do cupom" HorizontalOptions="FillAndExpand" />
+                <Button Text="Aplicar" Clicked="OnAplicarCupomClicked" />
+            </HorizontalStackLayout>
+
+            <Label x:Name="DiscountLabel" Text="Desconto: R$ 0,00 (0%)" FontSize="16" />
+
+            <Label Text="Forma de pagamento:" />
+            <Picker x:Name="PaymentPicker">
+                <Picker.Items>
+                    <x:String>Cartão</x:String>
+                    <x:String>Pix</x:String>
+                    <x:String>Dinheiro</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Button Text="Confirmar" HeightRequest="60" FontSize="20" Clicked="OnConfirmarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

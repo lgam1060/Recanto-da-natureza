@@ -3,6 +3,7 @@
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Recanto_da_natureza.Controls"
     x:Class="Recanto_da_natureza.ReservaPage"
     BackgroundColor="#E8DCCB"
     Title="Reservas">
@@ -12,6 +13,8 @@
         <VerticalStackLayout
             Padding="20"
             Spacing="30">
+
+            <controls:NavBarView />
 
             <Label
                 Text="Nossos Chalés"
@@ -64,21 +67,25 @@
                         Padding="20"
                         Spacing="12">
 
-                        <Label
-                            Text="✨ Wi-Fi incluso"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="✨" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Wi-Fi incluso" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
-                        <Label
-                            Text="❄️ Ar-condicionado"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="❄️" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Ar-condicionado" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
-                        <Label
-                            Text="🛏️ Cama Queen Size"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="🛏️" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Cama Queen Size" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
-                        <Label
-                            Text="👫 Capacidade: 2 hóspedes"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="👫" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Capacidade: 2 hóspedes" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
                         <Label
                             Text="R$ 450,00 / noite"
@@ -89,7 +96,9 @@
                         <Button
                             Text="Reservar Sky"
                             HeightRequest="60"
-                            FontSize="20"/>
+                            FontSize="20"
+                            Clicked="OnReservarClicked"
+                            CommandParameter="Sky;450" />
 
                     </VerticalStackLayout>
 
@@ -137,21 +146,25 @@
                         Padding="20"
                         Spacing="12">
 
-                        <Label
-                            Text="✨ Wi-Fi incluso"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="✨" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Wi-Fi incluso" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
-                        <Label
-                            Text="🛁 Banheira"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="🛁" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Banheira" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
-                        <Label
-                            Text="🌲 Varanda privativa"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="🌲" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Varanda privativa" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
-                        <Label
-                            Text="👫 Capacidade: 2 hóspedes"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="👫" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Capacidade: 2 hóspedes" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
                         <Label
                             Text="R$ 390,00 / noite"
@@ -162,7 +175,9 @@
                         <Button
                             Text="Reservar Wood"
                             HeightRequest="60"
-                            FontSize="20"/>
+                            FontSize="20"
+                            Clicked="OnReservarClicked"
+                            CommandParameter="Wood;390" />
 
                     </VerticalStackLayout>
 
@@ -210,21 +225,25 @@
                         Padding="20"
                         Spacing="12">
 
-                        <Label
-                            Text="✨ Wi-Fi incluso"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="✨" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Wi-Fi incluso" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
-                        <Label
-                            Text="🛁 Hidromassagem"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="💧" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Hidromassagem" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
-                        <Label
-                            Text="🌿 Vista para natureza"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="🌳" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Ambiente natural" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
-                        <Label
-                            Text="👫 Capacidade: 2 hóspedes"
-                            FontSize="18"/>
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <Label Text="👫" FontSize="18" HorizontalOptions="Start" />
+                            <Label Text="Capacidade: 2 hóspedes" FontSize="18" Style="{StaticResource LabelOnLight}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
 
                         <Label
                             Text="R$ 520,00 / noite"
@@ -235,7 +254,9 @@
                         <Button
                             Text="Reservar Stone"
                             HeightRequest="60"
-                            FontSize="20"/>
+                            FontSize="20"
+                            Clicked="OnReservarClicked"
+                            CommandParameter="Stone;520" />
 
                     </VerticalStackLayout>
 
@@ -248,4 +269,3 @@
     </ScrollView>
 
 </ContentPage>
-    

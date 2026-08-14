@@ -10,6 +10,9 @@
         <Color x:Key="VerdeEscuro">#4D6B50</Color>
         <Color x:Key="Bege">#E8DCCB</Color>
         <Color x:Key="Branco">#FFFFFF</Color>
+        <Color x:Key="Preto">#000000</Color>
+        <Color x:Key="TextoClaro">#FFFFFF</Color>
+        <Color x:Key="TextoEscuro">#000000</Color>
 
         <Style TargetType="Button">
             <Setter Property="BackgroundColor" Value="{StaticResource VerdePrincipal}" />
@@ -25,6 +28,15 @@
             <Setter Property="TextColor" Value="Black"/>
             <Setter Property="PlaceholderColor" Value="Gray"/>
             <Setter Property="HeightRequest" Value="50"/>
+        </Style>
+
+        <!-- Estilos para legibilidade sobre fundos claros/escuros -->
+        <Style x:Key="LabelOnLight" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource TextoEscuro}" />
+        </Style>
+
+        <Style x:Key="LabelOnDark" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource TextoClaro}" />
         </Style>
 
     </Application.Resources>

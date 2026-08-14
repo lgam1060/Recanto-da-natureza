@@ -3,6 +3,7 @@
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Recanto_da_natureza.Controls"
     x:Class="Recanto_da_natureza.MainPage"
     BackgroundColor="#E8DCCB"
     Title="Recanto da Natureza">
@@ -12,6 +13,9 @@
         <VerticalStackLayout
             Padding="0"
             Spacing="0">
+
+            <!-- NAVBAR -->
+            <controls:NavBarView />
 
             <!-- IMAGEM PRINCIPAL -->
             <Grid HeightRequest="320">
@@ -35,13 +39,13 @@
                         FontSize="40"
                         FontAttributes="Bold"
                         HorizontalTextAlignment="Center"
-                        TextColor="White"/>
+                        Style="{StaticResource LabelOnDark}"/>
 
                     <Label
                         Text="Pousada exclusiva em Brotas/SP"
                         FontSize="20"
                         HorizontalTextAlignment="Center"
-                        TextColor="White"/>
+                        Style="{StaticResource LabelOnDark}"/>
 
                 </VerticalStackLayout>
 
@@ -51,6 +55,27 @@
             <VerticalStackLayout
                 Padding="20"
                 Spacing="20">
+
+                <!-- WEATHER CARD -->
+                <Border
+                    BackgroundColor="#FFFFFF"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="16"
+                    Margin="0, -40, 0, 0">
+
+                    <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+                        <VerticalStackLayout>
+                            <Label x:Name="LocationLabel" Text="Brotas, SP" FontAttributes="Bold" FontSize="16" Style="{StaticResource LabelOnLight}" />
+                            <Label x:Name="WeatherUpdatedLabel" Text="Atualizando..." FontSize="12" TextColor="Gray" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout HorizontalOptions="EndAndExpand" Spacing="2">
+                            <Label x:Name="TemperatureLabel" Text="--°C" FontSize="28" FontAttributes="Bold" Style="{StaticResource LabelOnLight}" HorizontalOptions="End" />
+                            <Label x:Name="ConditionLabel" Text="--" FontSize="14" Style="{StaticResource LabelOnLight}" HorizontalOptions="End" />
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                </Border>
 
                 <!-- CARD PRINCIPAL -->
                 <Border
@@ -65,7 +90,7 @@
                             Text="Informações da Pousada"
                             FontSize="28"
                             FontAttributes="Bold"
-                            TextColor="#4D6B50"
+                            Style="{StaticResource LabelOnLight}"
                             HorizontalOptions="Center"/>
 
                         <!-- ITEM -->
@@ -82,7 +107,7 @@
                                     Text="8 Chalés Exclusivos"
                                     FontSize="20"
                                     FontAttributes="Bold"
-                                    TextColor="#4D6B50"/>
+                                    Style="{StaticResource LabelOnLight}"/>
 
                                 <Label
                                     Text="Ambientes privativos em meio à natureza."
@@ -107,7 +132,7 @@
                                     Text="Máximo de 2 hóspedes"
                                     FontSize="20"
                                     FontAttributes="Bold"
-                                    TextColor="#4D6B50"/>
+                                    Style="{StaticResource LabelOnLight}"/>
 
                                 <Label
                                     Text="Ideal para casais e momentos tranquilos."
@@ -132,7 +157,7 @@
                                     Text="Ambiente adulto"
                                     FontSize="20"
                                     FontAttributes="Bold"
-                                    TextColor="#4D6B50"/>
+                                    Style="{StaticResource LabelOnLight}"/>
 
                                 <Label
                                     Text="Permitido apenas maiores de 14 anos."
@@ -157,7 +182,7 @@
                                     Text="Pets não permitidos"
                                     FontSize="20"
                                     FontAttributes="Bold"
-                                    TextColor="#4D6B50"/>
+                                    Style="{StaticResource LabelOnLight}"/>
 
                                 <Label
                                     Text="Mantemos um ambiente silencioso e reservado."
@@ -177,18 +202,29 @@
                     Text="Login e Cadastro"
                     HeightRequest="60"
                     FontSize="20"
+                    CornerRadius="12"
+                    BackgroundColor="#4D6B50"
+                    TextColor="White"
                     Clicked="AbrirLogin"/>
 
                 <Button
                     Text="Reservas"
                     HeightRequest="60"
                     FontSize="20"
+                    CornerRadius="12"
+                    BackgroundColor="#7FB77E"
+                    TextColor="White"
                     Clicked="AbrirReserva"/>
 
                 <Button
                     Text="Sobre Nós"
                     HeightRequest="60"
                     FontSize="20"
+                    CornerRadius="12"
+                    BackgroundColor="Transparent"
+                    BorderColor="#4D6B50"
+                    BorderWidth="1"
+                    TextColor="#4D6B50"
                     Clicked="AbrirSobre"/>
 
             </VerticalStackLayout>

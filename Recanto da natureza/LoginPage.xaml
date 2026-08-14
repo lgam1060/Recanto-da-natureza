@@ -3,6 +3,7 @@
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Recanto_da_natureza.Controls"
     x:Class="Recanto_da_natureza.LoginPage"
     BackgroundColor="#E8DCCB"
     Title="Login">
@@ -12,6 +13,8 @@
         <VerticalStackLayout
             Padding="25"
             Spacing="15">
+
+            <controls:NavBarView />
 
             <Label
                 Text="Área do Hóspede"
