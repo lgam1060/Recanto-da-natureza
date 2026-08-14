@@ -1,5 +1,9 @@
 using System;
 using Microsoft.Maui.Controls;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Recanto_da_natureza.Data;
+using Recanto_da_natureza.Models;
 
 namespace Recanto_da_natureza
 {
@@ -109,6 +113,40 @@ namespace Recanto_da_natureza
 
             await DisplayAlert("Reserva Confirmada", message, "OK");
 
+
+            // Persistir reserva no banco, se disponível
+            try
+            {
+                var services = Application.Current?.Handler?.MauiContext?.Services;
+                var db = services?.GetService<AppDbContext>();
+                if (db != null)
+                {
+                    var checkIn = CheckInDate?.Date ?? DateTime.Today;
+                    var checkOut = CheckOutDate?.Date ?? DateTime.Today.AddDays(1);
+                    var nightsCalc = Math.Max(1, (int)Math.Floor((checkOut - checkIn).TotalDays));
+                    var subtotalCalc = nightsCalc * _pricePerNight;
+                    var discountAmountCalc = Math.Round(subtotalCalc * (_discountPercent / 100m), 2);
+                    var totalCalc = subtotalCalc - discountAmountCalc;
+
+                    var reservation = new Reservation
+                    {
+                        ChaleName = _chaleName,
+                        CheckIn = checkIn,
+                        CheckOut = checkOut,
+                        Nights = nightsCalc,
+                        Total = totalCalc,
+                        PaymentMethod = PaymentPicker.SelectedItem as string
+                    };
+
+                    db.Reservations.Add(reservation);
+                    await db.SaveChangesAsync();
+                }
+            }
+            catch
+            {
+                // falha ao salvar não impede a experiência do usuário
+            }
+
             // Volta para página anterior
             await Navigation.PopAsync();
         }
@@ -147,7 +185,7 @@ namespace Recanto_da_natureza
             }
             catch
             {
-                // ignore
+                // ignoreo tach lq na tem nada a ver
             }
         }
     }

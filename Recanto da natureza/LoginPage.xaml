@@ -35,13 +35,13 @@
                         FontSize="24"
                         FontAttributes="Bold"/>
 
-                    <Entry Placeholder="E-mail"/>
+                    <Entry x:Name="LoginEmailEntry" Placeholder="E-mail"/>
 
-                    <Entry
+                    <Entry x:Name="LoginPasswordEntry"
                         Placeholder="Senha"
                         IsPassword="True"/>
 
-                    <Button Text="Entrar"/>
+                    <Button Text="Entrar" Clicked="OnLoginClicked"/>
 
                 </VerticalStackLayout>
 
@@ -59,17 +59,17 @@
                         FontSize="24"
                         FontAttributes="Bold"/>
 
-                    <Entry Placeholder="Nome completo"/>
+                    <Entry x:Name="RegNameEntry" Placeholder="Nome completo"/>
 
-                    <Entry Placeholder="E-mail"/>
+                    <Entry x:Name="RegEmailEntry" Placeholder="E-mail"/>
 
-                    <Entry Placeholder="Telefone"/>
+                    <Entry x:Name="RegPhoneEntry" Placeholder="Telefone"/>
 
-                    <Entry
+                    <Entry x:Name="RegPasswordEntry"
                         Placeholder="Senha"
                         IsPassword="True"/>
 
-                    <Button Text="Cadastrar"/>
+                    <Button Text="Cadastrar" Clicked="OnRegisterClicked"/>
 
                 </VerticalStackLayout>
 
