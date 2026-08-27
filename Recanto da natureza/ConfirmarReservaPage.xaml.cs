@@ -84,10 +84,21 @@ namespace Recanto_da_natureza
 
         private async void OnConfirmarClicked(object sender, EventArgs e)
         {
+            // Evita múltiplos cliques
+            try
+            {
+                ConfirmButton.IsEnabled = false;
+            }
+            catch
+            {
+                // ignore se não houver referência
+            }
+
             var payment = PaymentPicker.SelectedItem as string;
             if (string.IsNullOrWhiteSpace(payment))
             {
                 await DisplayAlert("Atenção", "Selecione uma forma de pagamento.", "OK");
+                try { ConfirmButton.IsEnabled = true; } catch { }
                 return;
             }
 
@@ -112,46 +123,50 @@ namespace Recanto_da_natureza
             var discountAmount = Math.Round(subtotal * (_discountPercent / 100m), 2);
             var total = subtotal - discountAmount;
 
-            var message = $"Reserva: {_chaleName}\nCheck-in: {CheckInDate.Date:d}\nCheck-out: {CheckOutDate.Date:d}\nDiárias: {nights}\nSubtotal: R$ {subtotal:0.00}\nDesconto: R$ {discountAmount:0.00} ({_discountPercent:0}%)\nTotal: R$ {total:0.00}\nPagamento: {payment}";
-
-            await DisplayAlert("Reserva Confirmada", message, "OK");
-
-
             // Persistir reserva no banco, se disponível
+            var services = Application.Current?.Handler?.MauiContext?.Services;
+            var db = services?.GetService<AppDbContext>();
+            if (db == null)
+            {
+                await DisplayAlert("Erro", "Banco de dados não disponível. A reserva não foi salva.", "OK");
+                try { ConfirmButton.IsEnabled = true; } catch { }
+                return;
+            }
+
             try
             {
-                var services = Application.Current?.Handler?.MauiContext?.Services;
-                var db = services?.GetService<AppDbContext>();
-                if (db != null)
+                var checkIn = CheckInDate?.Date ?? DateTime.Today;
+                var checkOut = CheckOutDate?.Date ?? DateTime.Today.AddDays(1);
+                var nightsCalc = Math.Max(1, (int)Math.Floor((checkOut - checkIn).TotalDays));
+                var subtotalCalc = nightsCalc * _pricePerNight;
+                var discountAmountCalc = Math.Round(subtotalCalc * (_discountPercent / 100m), 2);
+                var totalCalc = subtotalCalc - discountAmountCalc;
+
+                var reservation = new Reservation
                 {
-                    var checkIn = CheckInDate?.Date ?? DateTime.Today;
-                    var checkOut = CheckOutDate?.Date ?? DateTime.Today.AddDays(1);
-                    var nightsCalc = Math.Max(1, (int)Math.Floor((checkOut - checkIn).TotalDays));
-                    var subtotalCalc = nightsCalc * _pricePerNight;
-                    var discountAmountCalc = Math.Round(subtotalCalc * (_discountPercent / 100m), 2);
-                    var totalCalc = subtotalCalc - discountAmountCalc;
+                    ChaleName = _chaleName,
+                    CheckIn = checkIn,
+                    CheckOut = checkOut,
+                    Nights = nightsCalc,
+                    Total = totalCalc,
+                    PaymentMethod = PaymentPicker.SelectedItem as string
+                };
 
-                    var reservation = new Reservation
-                    {
-                        ChaleName = _chaleName,
-                        CheckIn = checkIn,
-                        CheckOut = checkOut,
-                        Nights = nightsCalc,
-                        Total = totalCalc,
-                        PaymentMethod = PaymentPicker.SelectedItem as string
-                    };
+                db.Reservations.Add(reservation);
+                await db.SaveChangesAsync();
 
-                    db.Reservations.Add(reservation);
-                    await db.SaveChangesAsync();
-                }
+                // Exibe confirmação somente após salvar com sucesso
+                await DisplayAlert("Sucesso", "Reserva salva no banco de dados com sucesso!", "OK");
+
+                // Mantém comportamento atual: volta para página anterior
+                await Navigation.PopAsync();
             }
-            catch
+            catch (Exception ex)
             {
-                // falha ao salvar não impede a experiência do usuário
+                // Mostra erro ao usuário e reabilita botão
+                await DisplayAlert("Erro", "Não foi possível salvar a reserva. Tente novamente mais tarde.", "OK");
+                try { ConfirmButton.IsEnabled = true; } catch { }
             }
-
-            // Volta para página anterior
-            await Navigation.PopAsync();
         }
 
         private void OnAplicarCupomClicked(object sender, EventArgs e)
